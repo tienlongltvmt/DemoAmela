@@ -6,6 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   Image,
+  ScrollView,
 } from 'react-native';
 // import CheckBox from 'react-native-checkbox';
 // import {CheckBox} from 'react-native-elements';
@@ -14,7 +15,7 @@ import CheckBox from '@react-native-community/checkbox';
 export default class LoginActivity extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.header}>
           <Image
             style={styles.imageLogo}
@@ -79,7 +80,7 @@ export default class LoginActivity extends React.Component {
             />
           </View>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -97,11 +98,12 @@ const styles = StyleSheet.create({
   body: {
     marginTop: -80,
     backgroundColor: 'white',
-    height: '70%',
+    height: '200%',
     margin: 20,
     alignItems: 'center',
     borderWidth: 0.25,
     borderRadius: 2,
+    marginBottom: 100,
   },
   textSign: {
     fontSize: 20,
