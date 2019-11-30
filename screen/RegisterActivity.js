@@ -8,27 +8,28 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import CheckBox from '@react-native-community/checkbox';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-export default class LoginActivity extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+// import {Icon} from 'react-native-elements';
+export default class RegisterActivity extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
         <LinearGradient
           colors={['#FF0099', '#990099', '#660099']}
           style={styles.header}>
+          <TouchableOpacity
+            style={styles.back}
+            onPress={() => this.props.navigation.goBack()}>
+            <Icon name="arrow-left" color="#FFF" size={30} />
+          </TouchableOpacity>
           <Image
             style={styles.imageLogo}
             source={require('../assets/logo.png')}
           />
         </LinearGradient>
         <View style={styles.body}>
-          <Text style={styles.textSign}>SIGN IN</Text>
+          <Text style={styles.textSign}>SIGN UP</Text>
           <View style={styles.textInput}>
             <View style={styles.textInputChild}>
               <View style={styles.imageinput}>
@@ -50,12 +51,18 @@ export default class LoginActivity extends React.Component {
                 inlineImageLeft="../assets/facebook.png"
               />
             </View>
+            <View style={styles.textInputChild}>
+              <View style={styles.imageinput}>
+                <Icon name="lock" color="#000" size={20} />
+              </View>
+              <TextInput
+                style={styles.input}
+                placeholder="Password"
+                inlineImageLeft="../assets/facebook.png"
+              />
+            </View>
           </View>
           <View style={styles.checkbox}>
-            <View style={styles.checkboxChild}>
-              <CheckBox />
-              <Text style={styles.textRemember}>Remember me</Text>
-            </View>
             <Text style={styles.textfogot}> Forgot Password</Text>
           </View>
           <LinearGradient
@@ -64,16 +71,13 @@ export default class LoginActivity extends React.Component {
             locations={[0, 0.5, 0.6]}
             colors={['#993366', '#663366', '#663399']}
             style={styles.btnSignIn}>
-            <TouchableOpacity
-              onPress={() =>
-                this.props.navigation.navigate('RegisterActivity')
-              }>
-              <Text style={styles.textSigns}> SIGN IN</Text>
+            <TouchableOpacity>
+              <Text style={styles.textSigns}> SIGN UP</Text>
             </TouchableOpacity>
           </LinearGradient>
           <View style={styles.textSigUp}>
             <Text>Still not connected ?</Text>
-            <Text style={styles.textfogot}> Sign Up</Text>
+            <Text style={styles.textfogot}> Sign In</Text>
           </View>
           <View style={styles.ors}>
             <View style={styles.gach} />
@@ -103,7 +107,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#DCDCDC',
   },
   header: {
-    height: '40%',
+    height: '30%',
     backgroundColor: '#B01A71',
     justifyContent: 'center',
     alignItems: 'center',
@@ -121,7 +125,7 @@ const styles = StyleSheet.create({
   textSign: {
     fontSize: 20,
     fontWeight: 'bold',
-    marginTop: 15,
+    marginTop: 20,
   },
   textSigns: {
     fontSize: 20,
@@ -131,7 +135,6 @@ const styles = StyleSheet.create({
   textInput: {
     width: '100%',
     padding: 20,
-    marginTop: 15,
   },
   input: {
     borderColor: 'gray',
@@ -140,8 +143,8 @@ const styles = StyleSheet.create({
   },
   checkbox: {
     width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
   },
   checkboxChild: {
     flexDirection: 'row',
@@ -150,7 +153,7 @@ const styles = StyleSheet.create({
   textfogot: {
     color: 'red',
     marginRight: 20,
-    alignSelf: 'center',
+    alignSelf: 'flex-end',
   },
   btnSignIn: {
     width: '80%',
@@ -214,5 +217,16 @@ const styles = StyleSheet.create({
     padding: 5,
     width: 30,
     textAlign: 'center',
+  },
+  back: {
+    position: 'absolute',
+    top: 30,
+    left: 30,
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: 'rgba(21,22,48,0.1)',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
