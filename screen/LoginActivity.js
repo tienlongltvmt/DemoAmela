@@ -31,9 +31,11 @@ export default class LoginActivity extends React.Component {
           <Text style={styles.textSign}>SIGN IN</Text>
           <View style={styles.textInput}>
             <View style={styles.textInputChild}>
-              <View style={styles.imageinput}>
-                <Icon name="user" color="#000" size={20} />
-              </View>
+              <LinearGradient
+                style={styles.imageinput}
+                colors={['#FF0099', '#660099']}>
+                <Icon name="user" color="#FFF" size={20} />
+              </LinearGradient>
               <TextInput
                 style={styles.input}
                 placeholder="User Name"
@@ -41,9 +43,11 @@ export default class LoginActivity extends React.Component {
               />
             </View>
             <View style={styles.textInputChild}>
-              <View style={styles.imageinput}>
-                <Icon name="lock" color="#000" size={20} />
-              </View>
+              <LinearGradient
+                style={styles.imageinput}
+                colors={['#FF0099', '#660099']}>
+                <Icon name="lock" color="#FFF" size={20} />
+              </LinearGradient>
               <TextInput
                 style={styles.input}
                 placeholder="Password"
@@ -61,8 +65,8 @@ export default class LoginActivity extends React.Component {
           <LinearGradient
             start={{x: 0.4, y: 0.01}}
             end={{x: 0.5, y: 0.25}}
-            locations={[0, 0.5, 0.6]}
-            colors={['#993366', '#663366', '#663399']}
+            locations={[0, 0.6]}
+            colors={['#993366', '#79378B']}
             style={styles.btnSignIn}>
             <TouchableOpacity
               onPress={() =>
@@ -82,7 +86,7 @@ export default class LoginActivity extends React.Component {
             </View>
             <View style={styles.gach} />
           </View>
-          <View style={styles.ors}>
+          <View style={styles.orss}>
             <Image
               style={styles.image}
               source={require('../assets/facebook.png')}
@@ -103,20 +107,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#DCDCDC',
   },
   header: {
-    height: '40%',
+    height: '30%',
     backgroundColor: '#B01A71',
     justifyContent: 'center',
     alignItems: 'center',
   },
   body: {
-    marginTop: -80,
+    marginTop: -60,
     backgroundColor: 'white',
     height: '200%',
     margin: 20,
     alignItems: 'center',
     borderWidth: 0.25,
     borderRadius: 2,
-    marginBottom: 150,
+    marginBottom: 100,
   },
   textSign: {
     fontSize: 20,
@@ -125,7 +129,7 @@ const styles = StyleSheet.create({
   },
   textSigns: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: '400',
     color: 'white',
   },
   textInput: {
@@ -148,7 +152,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   textfogot: {
-    color: 'red',
+    color: '#780062',
     marginRight: 20,
     alignSelf: 'center',
   },
@@ -177,10 +181,16 @@ const styles = StyleSheet.create({
     marginTop: 20,
     justifyContent: 'center',
   },
+  orss: {
+    flexDirection: 'row',
+    marginTop: 20,
+    justifyContent: 'center',
+  },
   image: {
-    width: 30,
-    height: 30,
-    marginLeft: 10,
+    width: 40,
+    height: 40,
+    marginTop: 10,
+    marginHorizontal: 10,
   },
   imageLogo: {
     width: 120,
@@ -190,7 +200,7 @@ const styles = StyleSheet.create({
   textInputChild: {
     flexDirection: 'row',
     borderRadius: 35,
-    borderWidth: 1,
+    borderWidth: 0.31,
     height: 50,
     marginTop: 10,
   },
@@ -207,6 +217,7 @@ const styles = StyleSheet.create({
   },
   textRemember: {
     alignSelf: 'center',
+    color: 'gray',
   },
   textOr: {
     borderWidth: 1,
@@ -214,5 +225,6 @@ const styles = StyleSheet.create({
     padding: 5,
     width: 30,
     textAlign: 'center',
+    borderColor: '#64004B',
   },
 });

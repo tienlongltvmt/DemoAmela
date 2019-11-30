@@ -32,9 +32,11 @@ export default class RegisterActivity extends React.Component {
           <Text style={styles.textSign}>SIGN UP</Text>
           <View style={styles.textInput}>
             <View style={styles.textInputChild}>
-              <View style={styles.imageinput}>
-                <Icon name="user" color="#000" size={20} />
-              </View>
+              <LinearGradient
+                style={styles.imageinput}
+                colors={['#FF0099', '#660099']}>
+                <Icon name="user" color="#FFF" size={20} />
+              </LinearGradient>
               <TextInput
                 style={styles.input}
                 placeholder="User Name"
@@ -42,9 +44,11 @@ export default class RegisterActivity extends React.Component {
               />
             </View>
             <View style={styles.textInputChild}>
-              <View style={styles.imageinput}>
-                <Icon name="lock" color="#000" size={20} />
-              </View>
+              <LinearGradient
+                style={styles.imageinput}
+                colors={['#FF0099', '#660099']}>
+                <Icon name="lock" color="#FFF" size={20} />
+              </LinearGradient>
               <TextInput
                 style={styles.input}
                 placeholder="Password"
@@ -52,9 +56,11 @@ export default class RegisterActivity extends React.Component {
               />
             </View>
             <View style={styles.textInputChild}>
-              <View style={styles.imageinput}>
-                <Icon name="lock" color="#000" size={20} />
-              </View>
+              <LinearGradient
+                style={styles.imageinput}
+                colors={['#FF0099', '#660099']}>
+                <Icon name="lock" color="#FFF" size={20} />
+              </LinearGradient>
               <TextInput
                 style={styles.input}
                 placeholder="Password"
@@ -68,8 +74,8 @@ export default class RegisterActivity extends React.Component {
           <LinearGradient
             start={{x: 0.4, y: 0.01}}
             end={{x: 0.5, y: 0.25}}
-            locations={[0, 0.5, 0.6]}
-            colors={['#993366', '#663366', '#663399']}
+            locations={[0, 0.6]}
+            colors={['#993366', '#79378B']}
             style={styles.btnSignIn}>
             <TouchableOpacity>
               <Text style={styles.textSigns}> SIGN UP</Text>
@@ -113,14 +119,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   body: {
-    marginTop: -80,
+    marginTop: -70,
     backgroundColor: 'white',
     height: '200%',
     margin: 20,
     alignItems: 'center',
     borderWidth: 0.25,
     borderRadius: 2,
-    marginBottom: 150,
+    marginBottom: 100,
   },
   textSign: {
     fontSize: 20,
@@ -151,7 +157,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   textfogot: {
-    color: 'red',
+    color: '#780062',
     marginRight: 20,
     alignSelf: 'flex-end',
   },
@@ -181,9 +187,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    width: 30,
-    height: 30,
-    marginLeft: 10,
+    width: 40,
+    height: 40,
+    marginTop: 10,
+    marginHorizontal: 10,
   },
   imageLogo: {
     width: 120,
@@ -193,7 +200,7 @@ const styles = StyleSheet.create({
   textInputChild: {
     flexDirection: 'row',
     borderRadius: 35,
-    borderWidth: 1,
+    borderWidth: 0.31,
     height: 50,
     marginTop: 10,
   },
@@ -217,6 +224,7 @@ const styles = StyleSheet.create({
     padding: 5,
     width: 30,
     textAlign: 'center',
+    borderColor: '#64004B',
   },
   back: {
     position: 'absolute',
