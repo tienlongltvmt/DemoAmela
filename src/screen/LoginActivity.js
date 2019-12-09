@@ -66,7 +66,7 @@ export default class LoginActivity extends React.Component {
             start={{x: 0.4, y: 0.01}}
             end={{x: 0.5, y: 0.25}}
             locations={[0, 0.6]}
-            colors={['#993366', '#79378B']}
+            colors={['#CD00CD', '#79378B']}
             style={styles.btnSignIn}>
             <TouchableOpacity
               onPress={() =>
